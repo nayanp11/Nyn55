@@ -4,18 +4,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'build in progress....'
-            }
-        }
-        stage('test') {
-            steps {
-                echo 'testing in progress....'
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo 'deployed '
-            }
-        }
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'https://github.com/nayanp11/Nyn55', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
     }
+}
+}
 }
